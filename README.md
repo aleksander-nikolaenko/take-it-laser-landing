@@ -20,18 +20,11 @@
  npm run dev
  open http://localhost:1234 in your browser
 ```
+## NPM Scripts
 
-## CLI Commands
+- `npm run dev` Compiles your files, starts watching files for changes, serves static files to port 1234.
+- `npm run build` Builds everything to `/dist` folder in production configuration.
+- `npm run images` Builds images minimaze and convert to avif and webp to `/dist/img` folder.
+- `npm run fonts` Builds fonts convert to woff and woff2 to `/dist/fonts` folder.
+- `npm run sprite` Builds svg-icons convert to one sprite file to `/dist/img/icons.svg`.
 
-- npm install
-  - Installs server-side dependencies from npm
-- npm run dev
-  - Compiles your files, starts watching files for changes, serves static files to port 1234
-- npm run build
-  - Builds everything
-- npm run images
-  - Builds images minimaze and convert to avif and webp
-- npm run fonts
-  - Builds fonts convert to woff and woff2
-- npm run sprite
-  - Builds svg-icons convert to one sprite file
