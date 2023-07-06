@@ -1,0 +1,375 @@
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow-y: auto;
+  background-color: rgba(160, 200, 20, 0.3);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    & .modal {
+      transform: scale(2) translateY(300px);
+    }
+  }
+}
+
+.modal {
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  min-height: 320px;
+  background-color: var(--primary-background-color);
+  border-radius: 16px;
+  position: relative;
+  top: 0;
+  transform: scale(1) translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(50, 50, 50, 0.7) url('../img/loader.gif') center / 50px
+      no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &.sending::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  @media screen and (max-height: 600px) {
+    top: 50%;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 40px;
+    max-width: 600px;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  padding: 0;
+  right: 8px;
+  top: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn-icon {
+  display: block;
+  fill: var(--text-color);
+  &:hover {
+    fill: var(--accent-color);
+  }
+}
+
+.modal-title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.modal-select {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.modal-select[data-state='active'] .modal-select-title::before {
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+.modal-select[data-state='active'] .modal-select-title::after {
+  transform: translate(3px, -50%) rotate(45deg);
+}
+.modal-select[data-state='active'] .modal-select-content {
+  opacity: 1;
+}
+.modal-select[data-state='active']
+  .modal-select-label
+  + .modal-select-input
+  + .modal-select-label {
+  max-height: 40px;
+  border-top-width: 1px;
+}
+
+.modal-select-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.15;
+  height: 32px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  color: rgba(117, 117, 117, 0.45);
+  background: transparent;
+  padding-left: 36px;
+  padding-right: 12px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+.modal-select-title[data-state='selected'] {
+  color: var(--text-color);
+}
+.modal-select-title::before,
+.modal-select-title::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--text-color);
+  transform: translate(-3px, -50%) rotate(45deg);
+}
+.modal-select-title::after {
+  transform: translate(3px, -50%) rotate(-45deg);
+}
+.modal-select-title:hover {
+  border-color: var(--accent-color);
+}
+.modal-select-title:hover::before,
+.modal-select-title:hover::after {
+  background-color: var(--accent-color);
+}
+.modal-select-content {
+  position: absolute;
+  top: 32px;
+  left: 3px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 6px);
+  background-color: var(--primary-background-color);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  z-index: 1;
+}
+/* .modal-select-input {
+  display: none;
+} */
+.modal-select-input:checked + label {
+  background-color: #dedede;
+}
+.modal-select-input:disabled + label {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.modal-select-label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  max-height: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.15;
+  color: var(--text-color);
+  padding: 0 16px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+
+.modal-select-label + input + .modal-select-label {
+  border-top: 0 solid #c7ccd1 60;
+}
+.modal-select-label:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.modal-select-address {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: var(--accent-color);
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.15;
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+
+.modal-form-field + .modal-form-field {
+  margin-top: 12px;
+}
+
+.modal-form-input-label {
+  font-size: 12px;
+  line-height: 1.15;
+  color: var(--text-color);
+
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-form-input-wrapper {
+  display: block;
+  position: relative;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.15;
+  border-radius: 4px;
+  color: var(--text-color);
+  background: transparent;
+  padding-left: 32px;
+  padding-right: 12px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.15;
+    color: rgba(117, 117, 117, 0.45);
+    @include mq(tablet) {
+      font-size: 16px;
+    }
+  }
+  &:focus {
+    border-color: var(--accent-color);
+  }
+}
+
+.modal-form-input-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--text-color);
+}
+.modal-form-input:focus + .modal-form-input-icon {
+  fill: var(--accent-color);
+}
+
+.modal-form-text-input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.15;
+  height: 120px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  background: transparent;
+  color: var(--text-color);
+  resize: none;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    border-color: var(--accent-color);
+  }
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.15;
+    color: rgba(117, 117, 117, 0.45);
+    @include mq(tablet) {
+      font-size: 16px;
+    }
+  }
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+
+/* 
+.modal-form-check-text {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.15;
+  color: var(--text-color);
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .modal-form-check-text {
+    font-size: 16px;
+  }
+}
+
+.modal-form-icon-place {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-check-icon {
+  fill: var(--primary-background-color);
+}
+.modal-checkbox-input:checked + .modal-form-icon-place {
+  background-color: var(--accent-color);
+  border: none;
+} */
+
+.modal-form-btn {
+  margin: 0 auto;
+  margin-top: 12px;
+  padding-left: 32px;
+  padding-right: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: var(--text-color);
+  }
+}

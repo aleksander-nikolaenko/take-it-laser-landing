@@ -17,6 +17,7 @@ export const js = () => {
     .pipe(
       plugins.webpack({
         mode: mode.isBuild ? 'production' : 'development',
+        // mode: 'production',
         output: {
           filename: 'main.min.js',
         },

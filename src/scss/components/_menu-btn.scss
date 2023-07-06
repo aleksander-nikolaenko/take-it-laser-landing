@@ -1,0 +1,26 @@
+.menu-btn-open,
+.menu-btn-close {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include mq(tablet) {
+    display: none;
+  }
+}
+
+.menu-btn-icon {
+  display: block;
+  width: 40px;
+  height: 28px;
+  fill: var(--text-color);
+  &:hover {
+    fill: var(--accent-color);
+  }
+}

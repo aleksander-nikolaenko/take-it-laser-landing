@@ -1,3 +1,7 @@
 import { isWebp } from './isWebp.js';
-console.log('first');
+import { mobileMenu } from './mobileMenu.js';
+import { modal } from './modal.js';
+
 isWebp();
+mobileMenu();
+modal();

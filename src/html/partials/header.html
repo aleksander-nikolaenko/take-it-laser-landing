@@ -1,27 +1,13 @@
-<header style="background-color: aquamarine">
-  This is header
-  <nav class="nav">
-    <div class="container">
-      <ul
-        class="header-nav-list list"
-        style="display: flex; gap: 20px; margin-left: 20px"
-      >
-        <li class="header-nav-item">
-          <a
-            class="header-nav-link link current"
-            href="./index.html"
-            >Головна сторінка</a
-          >
-        </li>
-
-        <li class="header-nav-item">
-          <a
-            class="header-nav-link link"
-            href="./about.html"
-            >Про нас</a
-          >
-        </li>
-      </ul>
+<header class="header">
+  <div class="container">
+    <div class="header-block">
+      @@include('components/menu-btn-open.html')
+      @@include('components/menu-btn-close.html')
+      @@include('components/header-logo.html')
+      @@include('components/header-button.html')
+      @@include('components/header-contacts-list.html')
     </div>
-  </nav>
+  </div>
+  @@include('components/header-nav.html')
+  @@include('components/mobile-menu.html')
 </header>

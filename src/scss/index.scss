@@ -6,4 +6,13 @@
 @import './base/fonts';
 @import './base/common';
 
-@import './sections/about';
+@import './components/menu-btn';
+@import './components/header-logo';
+@import './components/button';
+@import './components/header-contacts';
+@import './components/header-nav';
+@import './components/mobile-menu';
+@import './components/modal';
+
+@import './sections/header';
+@import './sections/hero';

@@ -1,0 +1,29 @@
+.nav {
+  display: none;
+  background-color: var(--accent-color);
+  @include mq(tablet) {
+    display: block;
+  }
+}
+
+.header-nav-list {
+  display: flex;
+}
+
+.header-nav-link {
+  display: inline-block;
+  text-align: center;
+  padding: 4px 8px;
+  margin-right: 20px;
+  border-radius: 16px;
+  color: var(--secondary-text-color);
+  &.current {
+    color: var(--text-color);
+  }
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:hover {
+    color: var(--text-color);
+  }
+}
