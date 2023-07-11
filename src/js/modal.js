@@ -11,6 +11,9 @@ export const modal = () => {
 
   const modalForm = document.querySelector('.modal-form');
 
+  const scriptURL =
+    'https://script.google.com/macros/s/AKfycbzgs_RFGkZVYj4uJKHD7kdSLmI-SvyU3MiF6U9S_kjUufTDsISbAqclh99qIuX4mZcO/exec';
+
   const address = {
     default: '',
     Kharkiv: 'м.Харків, майдан Свободи 7',
@@ -87,7 +90,14 @@ export const modal = () => {
   };
 
   const backdropHandler = (event) => {
-    if (event.target === modalBackdrop) {
+    if (event.target === modalBackdrop || event.code === 'Escape') {
+      modalBackdrop.classList.add('is-hidden');
+      document.querySelector('html').classList.remove('no-scroll');
+    }
+  };
+
+  const escKeydownHandler = (event) => {
+    if (event.code === 'Escape') {
       modalBackdrop.classList.add('is-hidden');
       document.querySelector('html').classList.remove('no-scroll');
     }
@@ -128,6 +138,7 @@ export const modal = () => {
       comment: formData.get('user-text'),
     };
     modalWindow.classList.add('sending');
+
     // const emailLetter = `
     //   <p>Клиент ${userData.name} хочет записаться в городе ${
     //   ruCity[userData.city]
@@ -150,11 +161,26 @@ export const modal = () => {
     //   resetForm();
     //   closeModalHandler();
     // });
-    setTimeout(() => {
-      modalWindow.classList.remove('sending');
-      resetForm();
-      closeModalHandler();
-    }, 3000);
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then((response) => {
+        // console.log('Success!', response);
+        modalWindow.classList.remove('sending');
+        resetForm();
+        closeModalHandler();
+      })
+      .catch((error) => {
+        console.error('Error!', error.message);
+        modalWindow.classList.remove('sending');
+        resetForm();
+        closeModalHandler();
+      });
+
+    // setTimeout(() => {
+    //   modalWindow.classList.remove('sending');
+    //   resetForm();
+    //   closeModalHandler();
+    // }, 3000);
   };
 
   mask('[name="user-tel"]');
@@ -165,8 +191,9 @@ export const modal = () => {
   });
   // Close modal when click to close button
   closeModalBtn.addEventListener('click', closeModalHandler);
-  // Close modal when click to modal backdrop
-  modalBackdrop.addEventListener('click', backdropHandler);
+  // Close modal when click to modal backdrop or esc key
+  modalBackdrop.addEventListener('mousedown', backdropHandler);
+  window.addEventListener('keydown', escKeydownHandler);
   // Open and close select dropdown when click to select title
   selectTitle.addEventListener('click', selectHandler);
   // Close select when change option
