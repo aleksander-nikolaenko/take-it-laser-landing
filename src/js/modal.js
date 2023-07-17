@@ -1,5 +1,8 @@
 export const modal = () => {
   const modalBackdrop = document.querySelector('[data-modal-backdrop]');
+  const modalBackdropPopup = document.querySelector(
+    '[data-modal-backdrop-popup]'
+  );
   const modalWindow = document.querySelector('[data-modal]');
   const openModalBtn = document.querySelectorAll('[data-modal-open]');
   const closeModalBtn = document.querySelector('[data-modal-close]');
@@ -12,7 +15,7 @@ export const modal = () => {
   const modalForm = document.querySelector('.modal-form');
 
   const scriptURL =
-    'https://script.google.com/macros/s/AKfycbzgs_RFGkZVYj4uJKHD7kdSLmI-SvyU3MiF6U9S_kjUufTDsISbAqclh99qIuX4mZcO/exec';
+    'https://script.google.com/macros/s/AKfycbxp_YNGxv44lYa1nhtvUSkyfHWYwjEi7c9MBzglNLnotFU07mk59RKGILWJUIvZaDMJ/exec';
 
   const address = {
     default: '',
@@ -130,57 +133,25 @@ export const modal = () => {
       selectAddress.textContent = address['default'];
     };
     const formData = new FormData(event.target);
-    const userData = {
-      name: formData.get('user-name'),
-      city: formData.get('user-city'),
-      nickname: formData.get('user-nikname'),
-      tel: formData.get('user-tel'),
-      comment: formData.get('user-text'),
-    };
+
     modalWindow.classList.add('sending');
 
-    // const emailLetter = `
-    //   <p>Клиент ${userData.name} хочет записаться в городе ${
-    //   ruCity[userData.city]
-    // } </p>
-    //   <p>Контакты:</p>
-    //   <p>Телефон ${userData.tel}</p>
-    //   ${userData.nickname ? `<p>Ник Instagram ${userData.nickname}</p>` : ''}
-    //   ${userData.comment ? `<p>Комментарий: ${userData.comment}</p>` : ''}
-    //   `;
-
-    // Email.send({
-    //   SecureToken: '73266ec8-5d25-41a3-aa76-87840eb28086',
-    //   To: 'admin@take-it-laser.com.ua',
-    //   From: 'aleksander_nikolaenko@take-it-laser.com.ua',
-    //   Subject: `Письмо с сайта от ${userData.name}`,
-    //   Body: emailLetter,
-    // }).then((message) => {
-    //   modalWindow.classList.remove('sending');
-    //   alert(message);
-    //   resetForm();
-    //   closeModalHandler();
-    // });
-
+    // Send data to google sheet script
     fetch(scriptURL, { method: 'POST', body: formData })
       .then((response) => {
         // console.log('Success!', response);
         modalWindow.classList.remove('sending');
         resetForm();
         closeModalHandler();
+        modalBackdropPopup.classList.remove('is-hidden');
+        document.querySelector('html').classList.add('no-scroll');
       })
       .catch((error) => {
-        console.error('Error!', error.message);
+        // console.error('Error!', error.message);
         modalWindow.classList.remove('sending');
         resetForm();
         closeModalHandler();
       });
-
-    // setTimeout(() => {
-    //   modalWindow.classList.remove('sending');
-    //   resetForm();
-    //   closeModalHandler();
-    // }, 3000);
   };
 
   mask('[name="user-tel"]');

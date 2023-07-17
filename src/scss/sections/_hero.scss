@@ -2,6 +2,7 @@
   padding-top: 120px;
   .title {
     text-align: center;
+    color: var(--title-color);
   }
   .post-title {
     text-align: center;
@@ -9,5 +10,10 @@
   }
   .text {
     text-align: center;
+    color: var(--text-color);
+    font-size: 16px;
+    @include mq(tablet) {
+      font-size: 20px;
+    }
   }
 }
