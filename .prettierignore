@@ -1,0 +1,10 @@
+dist
+node_modules
+
+src/html/pages/index.html
+src/html/parts/header.html
+src/html/parts/main.html
+src/html/parts/mobile-menu.html
+src/html/parts/modal-confirm.html
+src/html/parts/modal-form.html
+src/html/parts/components/select.html

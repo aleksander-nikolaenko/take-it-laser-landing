@@ -1,8 +1,8 @@
 export const mobileMenu = () => {
   const mobileMenu = document.querySelector('.mobile-menu');
-  const openMenuBtn = document.querySelector('.menu-btn-open');
-  const closeMenuBtn = document.querySelector('.menu-btn-close');
-  const mobNavLinks = document.querySelectorAll('.mobile-menu-nav-link');
+  const openMenuBtn = document.querySelector('[data-burger-open]');
+  const closeMenuBtn = document.querySelector('[data-burger-close]');
+  const mobNavLinks = document.querySelectorAll('.mobile-menu .nav-link');
 
   const openMenuHandler = () => {
     openMenuBtn.setAttribute('aria-expanded', true);
@@ -23,13 +23,13 @@ export const mobileMenu = () => {
 
   openMenuBtn.addEventListener('click', openMenuHandler);
   closeMenuBtn.addEventListener('click', closeMenuHandler);
-  mobNavLinks.forEach((item) => {
+  mobNavLinks.forEach(item => {
     item.addEventListener('click', closeMenuHandler);
   });
 
   // Закрываем мобильное меню на более широких экранах
   // в случае изменения ориентации устройства.
-  window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+  window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
     if (!e.matches) return;
     mobileMenu.classList.remove('is-open');
     openMenuBtn.setAttribute('aria-expanded', false);

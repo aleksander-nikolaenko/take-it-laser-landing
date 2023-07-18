@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="uk">
-  @@include('../partials/head.html', {"title":
-  "Лазерна&nbspепіляція&nbspTake&nbspit&nbspLaser"})
+  @@include('../parts/head.html', 
+  {"title":"Лазерна епіляція Take it Laser"})
   <body>
     <div class="wrapper">
-      @@include('../partials/header.html') @@include('../partials/main.html')
-      @@include('../partials/footer.html')
+      @@include('../parts/header.html') 
+      @@include('../parts/main.html')
+      @@include('../parts/footer.html')
     </div>
-    @@include('../partials/components/modal.html')
-    @@include('../partials/components/modal-popup.html')
+    @@include('../parts/mobile-menu.html')
+    @@include('../parts/modal-form.html')
+    @@include('../parts/modal-confirm.html')
     <script src="./js/main.min.js"></script>
   </body>
 </html>

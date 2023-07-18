@@ -1,0 +1,18 @@
+<div class="confirm-backdrop is-hidden" data-confirm-backdrop>
+  <div class="modal-confirm" data-modal-confirm>
+    @@include('components/button-close.html', 
+    { 
+      "attribute": "data-confirm-close", 
+    })
+    <p class="confirm-title">Ваші дані відправлені</p>
+    <p class="confirm-text">
+      Адміністратор зв'яжеться з вами протягом доби у робочий час
+    </p>
+    @@include('components/button.html', 
+    { 
+      "type": "button", 
+      "attribute": "data-confirm-close", 
+      "text": "Закрити" 
+    })
+  </div>
+</div>

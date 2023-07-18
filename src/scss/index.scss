@@ -6,15 +6,17 @@
 @import './base/fonts';
 @import './base/common';
 
-@import './components/menu-btn';
-@import './components/header-logo';
-@import './components/button';
-@import './components/header-contacts';
-@import './components/header-nav';
-@import './components/mobile-menu';
-@import './components/modal';
-@import './components/modal-popup';
+@import './parts/header';
+@import './parts/footer';
+@import './parts/mobile-menu';
+@import './parts/modal-confirm';
+@import './parts/modal-form';
 
-@import './sections/header';
-@import './sections/hero';
-@import './sections/footer';
+@import './parts/components/burger-menu-btn';
+@import './parts/components/logo';
+@import './parts/components/button';
+@import './parts/components/button-close';
+@import './parts/components/header-contacts';
+@import './parts/components/select-city';
+
+@import './parts/sections/hero';

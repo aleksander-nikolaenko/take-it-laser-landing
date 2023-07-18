@@ -1,0 +1,32 @@
+<div class="select-wrapper">
+  <label for="" class="form-input-label">Місто</label>
+  <div class="select" data-state="">
+    <div class="select-title" data-content="" data-state="">
+      Оберіть місто*
+    </div>
+    <div class="select-content">
+      @@loop('select-input.html', 
+      [
+        { "id": "select0", 
+          "name": "user-city",
+          "value": "value",
+          "attribute": "",
+          "text": "Оберіть місто"
+        },
+        { "id": "select1", 
+          "name": "user-city",
+          "value": "Kharkiv",
+          "attribute": "required",
+          "text": "Харків"
+        },
+        { "id": "select2", 
+          "name": "user-city",
+          "value": "Poltava",
+          "attribute": "required",
+          "text": "Полтава"
+        },
+      ])
+    </div>
+  </div>
+  <p class="select-details"></p>
+</div>

@@ -1,5 +1,4 @@
-.menu-btn-open,
-.menu-btn-close {
+.burger-menu-btn {
   padding: 0;
   width: 40px;
   height: 40px;
@@ -13,14 +12,13 @@
   @include mq(tablet) {
     display: none;
   }
-}
-
-.menu-btn-icon {
-  display: block;
-  width: 40px;
-  height: 28px;
-  fill: var(--text-color);
-  &:hover {
-    fill: var(--accent-color);
+  & .icon {
+    display: block;
+    width: 40px;
+    height: 28px;
+    fill: var(--text-color);
+    &:hover {
+      fill: var(--accent-color);
+    }
   }
 }
