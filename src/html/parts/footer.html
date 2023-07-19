@@ -1,3 +1,17 @@
 <footer class="footer">
-  <p>This is footer</p>
+  <div class="container">
+    @@include('components/logo.html')
+    <div class="contacts-container">
+      <p class="title">Контакти</p>
+      <div class="contacts-wrapper">
+        @@include('components/location-list.html')
+        @@include('components/phone-list.html')
+      </div>
+    </div>
+    <div class="social-container">
+      <p class="title">Соцмережі</p>
+      @@include('components/social-list.html')
+    </div>
+  </div>  
+   <p class="text"> &#169; 2023 Take it laser</p>
 </footer>

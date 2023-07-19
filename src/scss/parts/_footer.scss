@@ -1,6 +1,82 @@
 .footer {
-  padding: 20px;
   width: 100%;
   background-color: var(--secondary-background-color);
   color: var(--secondary-text-color);
+  & .container {
+    @include mq(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  & .social-container {
+    margin-left: 12px;
+  }
+  & .logo {
+    margin-top: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 120px;
+    & .icon {
+      width: 120px;
+      height: 80px;
+      fill: var(--secondary-text-color);
+    }
+    @include mq(tablet) {
+      flex-grow: 0.8;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  & .title {
+    font-size: 18px;
+    margin-top: 12px;
+    text-align: center;
+    color: var(--accent-color);
+    @include mq(tablet) {
+      text-align: left;
+    }
+  }
+  & .contacts-wrapper {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+  }
+  & .location-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    gap: 12px;
+    font-size: 14px;
+
+    @media screen and (min-width: 360px) {
+      flex-direction: column;
+      flex-grow: 0;
+      font-size: 16px;
+    }
+    @media screen and (min-width: 560px) {
+      flex-grow: 0.6;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    @media screen and (min-width: 768px) {
+      flex-grow: 0;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+  & .phone-list {
+    font-size: 14px;
+    @media screen and (min-width: 360px) {
+      font-size: 16px;
+    }
+  }
+  & .social-list {
+    margin-top: 12px;
+  }
+  & .text {
+    border-top: 1px solid var(--accent-color);
+    margin-top: 12px;
+    text-align: center;
+  }
 }
