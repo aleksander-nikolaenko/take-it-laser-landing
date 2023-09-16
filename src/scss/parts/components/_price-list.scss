@@ -1,0 +1,27 @@
+.list {
+  .item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+  .text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include mq(tablet) {
+      font-size: 16px;
+    }
+    .name {
+      flex-shrink: 0;
+    }
+    .dots {
+      flex-shrink: 0;
+    }
+    .actual-price {
+      flex-shrink: 0;
+    }
+  }
+}

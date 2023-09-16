@@ -1,0 +1,29 @@
+.section.price {
+  .section-title {
+    margin-bottom: 20px;
+  }
+  .post-title {
+    margin-bottom: 12px;
+  }
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include mq(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .complex-list {
+      width: 100%;
+      @include mq(tablet) {
+        width: 48%;
+      }
+    }
+    .single-list {
+      width: 100%;
+      @include mq(tablet) {
+        width: 48%;
+      }
+    }
+  }
+}

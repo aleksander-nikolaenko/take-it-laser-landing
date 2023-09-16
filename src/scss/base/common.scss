@@ -73,7 +73,7 @@ button {
   cursor: pointer;
 }
 
-.scroll-hidden {
+.no-scroll {
   overflow: hidden;
 }
 
@@ -98,8 +98,28 @@ button {
 }
 .main {
   flex-grow: 1;
+  padding-top: 120px;
 }
 
+.section {
+  padding-bottom: 20px;
+}
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  color: var(--title-color);
+  @include mq(tablet) {
+    font-size: 36px;
+  }
+}
+.post-title {
+  font-size: 16px;
+  text-align: center;
+  color: var(--accent-color);
+  @include mq(tablet) {
+    font-size: 20px;
+  }
+}
 .container {
   padding-left: 20px;
   padding-right: 20px;

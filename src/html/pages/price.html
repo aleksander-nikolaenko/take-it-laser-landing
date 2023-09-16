@@ -5,10 +5,11 @@
   <body>
     <div class="wrapper">
       @@include('../parts/header.html') 
-      @@include('../parts/main.html')
+      <main class="main">
+        @@include('../parts/sections/price.html')
+      </main>
       @@include('../parts/footer.html')
     </div>
-    @@include('../parts/components/to-top.html')
     @@include('../parts/mobile-menu.html')
     @@include('../parts/modal-form.html')
     @@include('../parts/modal-confirm.html')
