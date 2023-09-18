@@ -7,25 +7,38 @@ export const navLinkActions = () => {
 
   const headerHeight = header.clientHeight;
 
+  const hash = window.location.hash;
+  // scroll to section on load
+  if (hash) {
+    const targetElement = document.querySelector(hash);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - headerHeight,
+        behavior: 'smooth',
+      });
+    }
+  }
+
   // scroll to section
   navList.forEach(item => {
     item.addEventListener('click', e => {
       const isNavLink = [...anchors].some(item => item === e.target);
       if (isNavLink) {
         e.preventDefault();
-        const sectionToScrollTo = document.querySelector(
-          e.target.getAttribute('href'),
-        );
+        const sectionId = e.target.getAttribute('href');
+        const sectionToScrollTo = document.querySelector(sectionId);
+        window.location.hash = `${sectionId}`;
         if (sectionToScrollTo) {
           const offsetPosition =
             sectionToScrollTo.getBoundingClientRect().top +
             window.scrollY -
             (headerHeight + 20);
-
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth',
           });
+        } else {
+          window.location.href = `/${sectionId}`;
         }
       }
     });
