@@ -106,6 +106,7 @@ button {
 }
 .section-title {
   font-size: 24px;
+  font-weight: 700;
   text-align: center;
   color: var(--title-color);
   @include mq(tablet) {
@@ -114,6 +115,7 @@ button {
 }
 .post-title {
   font-size: 16px;
+  font-weight: 400;
   text-align: center;
   color: var(--accent-color);
   @include mq(tablet) {
@@ -127,9 +129,10 @@ button {
   margin-left: auto;
   min-width: 320px;
   max-width: 768px;
+  overflow: hidden;
 
   @include mq(tablet) {
     min-width: 768px;
-    max-width: 1600px;
+    max-width: 1280px;
   }
 }

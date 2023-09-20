@@ -17,7 +17,7 @@
   --secondary-background-color: #525252;
 
   /* GAPS */
-  --primary-gap: 40px;
+  --primary-gap: 20px;
 
   /* SHADOWS */
   --btn-sd: 5px 79px 32px rgba(28, 25, 23, 0.01),
@@ -26,6 +26,7 @@
     inset 0px 0px 14px rgba(28, 12, 1, 0.15);
   --menu-sd: 0px 52px 21px rgba(96, 51, 34, 0.01),
     0px 29px 17px rgba(96, 51, 34, 0.05), 0px 3px 7px rgba(96, 51, 34, 0.1);
+  --card-sd: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
 
   /* FONTS */
   --Roboto: 'Roboto', sans-serif;

@@ -5,6 +5,8 @@ import { modalConfirm } from './modalConfirm.js';
 import { modalForm } from './modalForm.js';
 import { navLinkActions } from './navLinkActions.js';
 import { selectCity } from './selectCity.js';
+import { sliderHeroInit } from './sliderHero.js';
+import { sliderReviewsInit } from './sliderReviews.js';
 
 function debounce(func, delay) {
   let timeoutId;
@@ -18,32 +20,16 @@ function debounce(func, delay) {
   };
 }
 
-const swiper = new Swiper('.slider', {
-  // Optional parameters
-  loop: true,
-  slidesPerView: 'auto',
-  centeredSlides: true,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + '</span>';
-    },
-  },
-  autoplay: {
-    delay: 10000,
-  },
-});
-
 window.addEventListener('load', () => {
   isWebp();
+  sliderHeroInit();
+  sliderReviewsInit();
+  navLinkActions();
+  generatePriceDots();
   mobileMenu();
   modalForm();
   modalConfirm();
   selectCity();
-  navLinkActions();
-  generatePriceDots();
 });
 
 window.addEventListener(
