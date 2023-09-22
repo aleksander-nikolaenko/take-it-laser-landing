@@ -63,7 +63,7 @@ export const navLinkActions = () => {
       }
       document
         .querySelector(`a[href*="#${currentSectionId}"]`)
-        .classList.add('current');
+        ?.classList.add('current');
     });
   });
 };

@@ -106,7 +106,7 @@ export const modalForm = () => {
       selectAddress.textContent = address['default'];
     };
     const formData = new FormData(event.target);
-
+    formData.set('user-tel', formData.get('user-tel').split(' ').join(''));
     modalWindow.classList.add('sending');
 
     // Send data to google sheet script

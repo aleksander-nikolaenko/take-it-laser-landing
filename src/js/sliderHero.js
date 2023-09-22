@@ -1,3 +1,5 @@
+import Swiper from 'swiper';
+
 export const sliderHeroInit = () => {
   const swiper = new Swiper('.slider-hero', {
     // Optional parameters

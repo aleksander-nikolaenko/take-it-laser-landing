@@ -1,3 +1,5 @@
+import Swiper from 'swiper';
+
 export const sliderReviewsInit = () => {
   const swiper = new Swiper('.slider-reviews', {
     // Optional parameters
