@@ -7,6 +7,7 @@ import { navLinkActions } from './navLinkActions.js';
 import { selectCity } from './selectCity.js';
 import { sliderHeroInit } from './sliderHero.js';
 import { sliderReviewsInit } from './sliderReviews.js';
+import { toggleAnswerQuestions } from './toggleAnswerQuestions.js';
 
 function debounce(func, delay) {
   let timeoutId;
@@ -30,12 +31,12 @@ window.addEventListener('load', () => {
   modalForm();
   modalConfirm();
   selectCity();
+  toggleAnswerQuestions();
 });
 
 window.addEventListener(
   'resize',
   debounce(() => {
-    navLinkActions();
     generatePriceDots();
   }, 300),
 );

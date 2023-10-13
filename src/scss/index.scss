@@ -2,7 +2,7 @@
 
 @import './utils/mixins';
 @import './utils/variables';
-@import './utils/swiper';
+@import './utils/swiper-bundle';
 
 @import './base/fonts';
 @import './base/common';
@@ -26,9 +26,11 @@
 @import './parts/components/to-top';
 @import './parts/components/slider-hero';
 @import './parts/components/slider-reviews';
+@import './parts/components/questions-list';
 
 @import './parts/sections/hero';
 @import './parts/sections/about';
 @import './parts/sections/features';
 @import './parts/sections/price';
 @import './parts/sections/reviews';
+@import './parts/sections/questions';

@@ -3,7 +3,7 @@
   background-color: var(--secondary-background-color);
   color: var(--secondary-text-color);
   & .container {
-    @include mq(tablet) {
+    @media screen and (min-width: 800px) {
       display: flex;
       justify-content: space-between;
     }
@@ -24,7 +24,7 @@
       height: 80px;
       fill: var(--secondary-text-color);
     }
-    @include mq(tablet) {
+    @media screen and (min-width: 800px) {
       flex-grow: 0.8;
       margin-left: 0;
       margin-right: 0;
@@ -35,7 +35,7 @@
     margin-top: 12px;
     text-align: center;
     color: var(--accent-color);
-    @include mq(tablet) {
+    @media screen and (min-width: 800px) {
       text-align: left;
     }
   }
@@ -52,7 +52,7 @@
     gap: 12px;
     font-size: 14px;
 
-    @media screen and (min-width: 360px) {
+    @media screen and (min-width: 370px) {
       flex-direction: column;
       flex-grow: 0;
       font-size: 16px;
@@ -62,7 +62,7 @@
       flex-direction: row;
       justify-content: space-around;
     }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 800px) {
       flex-grow: 0;
       flex-direction: row;
       justify-content: space-around;
@@ -70,7 +70,7 @@
   }
   & .phone-list {
     font-size: 14px;
-    @media screen and (min-width: 360px) {
+    @media screen and (min-width: 370px) {
       font-size: 16px;
     }
   }

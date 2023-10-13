@@ -47,7 +47,7 @@ export const navLinkActions = () => {
   // set active nav link
   window.addEventListener('scroll', () => {
     const scrollDistance = window.scrollY;
-    let currentSectionId = '';
+    let currentSectionId = 'null';
     scrollDistance > headerHeight
       ? toTopBtn.classList.add('show')
       : toTopBtn.classList.remove('show');
@@ -61,9 +61,14 @@ export const navLinkActions = () => {
           }
         });
       }
-      document
-        .querySelector(`a[href*="#${currentSectionId}"]`)
-        ?.classList.add('current');
+      const links = document.querySelectorAll(
+        `a[href*="#${currentSectionId}"]`,
+      );
+      if (links.length !== 0) {
+        links.forEach(link => {
+          link.classList.add('current');
+        });
+      }
     });
   });
 };

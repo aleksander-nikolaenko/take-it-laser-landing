@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 
 export const sliderReviewsInit = () => {
   const swiper = new Swiper('.slider-reviews', {
@@ -26,7 +26,6 @@ export const sliderReviewsInit = () => {
     slidesPerView: 'auto',
     centeredSlides: true,
     // If we need pagination
-
     autoplay: {
       delay: 5000,
     },
