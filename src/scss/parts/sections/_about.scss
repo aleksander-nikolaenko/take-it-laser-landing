@@ -6,13 +6,43 @@
     margin-top: 12px;
     margin-bottom: 12px;
   }
-  .about-text {
+  .about-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--primary-gap);
+    @include mq(tablet) {
+      flex-direction: row-reverse;
+    }
+  }
+  .about-content {
     font-size: 12px;
     text-align: justify;
     color: var(--text-color);
-    margin-bottom: 20px;
+    flex-shrink: 3;
+    margin-right: auto;
+    margin-left: auto;
     @include mq(tablet) {
       font-size: 16px;
     }
+  }
+  .about-introduce {
+    margin-bottom: 20px;
+  }
+  .about-header-list {
+    margin-bottom: 8px;
+  }
+  .about-list {
+    padding-left: 24px;
+  }
+  .about-list-item {
+    list-style: disc;
+  }
+  .about-action-text {
+    margin-top: 20px;
+  }
+  .about-img {
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 32px;
   }
 }

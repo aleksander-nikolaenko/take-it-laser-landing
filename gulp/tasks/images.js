@@ -14,14 +14,10 @@ export const images = () => {
         })
       )
     )
-    .pipe(plugins.if(mode.isBuild, plugins.newer(paths.build.images)))
-    .pipe(plugins.if(mode.isBuild, plugins.avif()))
-    .pipe(plugins.if(mode.isBuild, gulp.dest(paths.build.images)))
 
-    .pipe(plugins.if(mode.isBuild, gulp.src(paths.src.images)))
-    .pipe(plugins.if(mode.isBuild, plugins.newer(paths.build.images)))
-    .pipe(plugins.if(mode.isBuild, plugins.webp()))
-    .pipe(plugins.if(mode.isBuild, gulp.dest(paths.build.images)))
+    .pipe(plugins.newer(paths.build.images))
+    .pipe(plugins.webp())
+    .pipe(gulp.dest(paths.build.images))
 
     .pipe(gulp.src(paths.src.images))
     .pipe(plugins.newer(paths.build.images))

@@ -9,9 +9,12 @@
 
   .features-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--primary-gap);
     margin-bottom: 20px;
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, minmax(280px, 1fr));
+    }
     .features-list-icon {
       margin: 0 auto;
       width: 60px;
