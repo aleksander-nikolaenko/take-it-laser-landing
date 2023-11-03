@@ -98,7 +98,10 @@ button {
 }
 .main {
   flex-grow: 1;
-  padding-top: 120px;
+  padding-top: 90px;
+  @include mq(tablet) {
+    padding-top: 120px;
+  }
 }
 
 .section {

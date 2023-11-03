@@ -3,10 +3,123 @@
   min-width: 280px;
   margin-bottom: 20px;
   .swiper-slide {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    .slide-label {
+      position: absolute;
+      bottom: 200px;
+      left: 10px;
+      width: 280px;
+      @include mq(tablet) {
+        width: 360px;
+      }
+      @include mq(desktop) {
+        left: 50%;
+        transform: translateX(-150%);
+      }
+      .text {
+        margin-bottom: 12px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: var(--title-color);
+        text-shadow: 0 0 10px var(--primary-background-color),
+          0 0 30px var(--primary-background-color),
+          0 0 50px var(--primary-background-color),
+          0 0 80px var(--primary-background-color),
+          0 0 100px var(--primary-background-color);
+      }
+      .zone {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--text-color);
+        text-shadow: 0 0 10px var(--primary-background-color),
+          0 0 30px var(--primary-background-color),
+          0 0 50px var(--primary-background-color),
+          0 0 80px var(--primary-background-color);
+      }
+      .cost {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 52px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--title-color);
+        text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color),
+          0 0 30px var(--accent-color), 0 0 40px var(--accent-color),
+          0 0 70px var(--accent-color);
+        animation: neon 0.5s infinite alternate;
+      }
+    }
+    .button {
+      display: block;
+      position: absolute;
+      width: 260px;
+      left: 10px;
+      bottom: 40px;
+      &:hover {
+        color: var(--text-color);
+      }
+      @include mq(tablet) {
+        width: 328px;
+        margin: 0 auto;
+        left: 10px;
+        transform: translateX(0);
+      }
+      @include mq(desktop) {
+        left: 50%;
+        transform: translateX(-150%);
+      }
+    }
+
+    &.first {
+      .slide-label {
+        @include mq(tablet) {
+          bottom: 40px;
+        }
+      }
+
+      .button {
+        bottom: auto;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include mq(tablet) {
+          top: 120px;
+          left: 10px;
+          transform: translateX(0);
+        }
+        @include mq(desktop) {
+          left: 50%;
+          transform: translateX(-150%);
+        }
+      }
+    }
+    &.second {
+      .slide-label {
+        bottom: 200px;
+        @include mq(tablet) {
+          bottom: 240px;
+        }
+      }
+      .text {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .zone span {
+        display: block;
+        @include mq(tablet) {
+          display: inline;
+        }
+      }
+    }
+
     opacity: 0;
   }
   .swiper-slide-active {
@@ -29,5 +142,107 @@
   .swiper-pagination-bullet-active {
     width: 40px;
     background: var(--accent-color);
+  }
+}
+
+.webp .slider-hero .swiper-slide {
+  width: 100%;
+  height: 600px;
+  &.first {
+    background-image: url('../img/hero/hero-1.webp');
+    background-repeat: no-repeat;
+    background-position: 20% 200px;
+    background-size: 500px 500px;
+    @media screen and (min-width: 500px) {
+      background-position: center 200px;
+    }
+    @media screen and (min-width: 768px) {
+      background-size: 600px 600px;
+      background-position: right;
+    }
+  }
+  &.second {
+    background-image: url('../img/hero/hero-2.webp');
+    background-repeat: no-repeat;
+    background-position: 35% 0px;
+    background-size: 600px 600px;
+    @media screen and (min-width: 650px) {
+      background-position: right;
+    }
+  }
+  &.third {
+    background-image: url('../img/hero/hero-3.webp');
+    background-repeat: no-repeat;
+    background-position: 30% 0px;
+    background-size: 765px 600px;
+    @media screen and (min-width: 650px) {
+      background-position: right;
+    }
+  }
+  &.fourth {
+    background-image: url('../img/hero/hero-4.webp');
+    background-repeat: no-repeat;
+    background-position: 30% 32px;
+    background-size: 600px 600px;
+    @media screen and (min-width: 650px) {
+      background-position: right 32px;
+    }
+  }
+}
+
+.no-webp .slider-hero .swiper-slide {
+  width: 100%;
+  height: 600px;
+  &.first {
+    background-image: url('../img/hero/hero-1.png');
+    background-repeat: no-repeat;
+    background-position: 20% 200px;
+    background-size: 500px 500px;
+    @media screen and (min-width: 500px) {
+      background-position: center 200px;
+    }
+    @media screen and (min-width: 768px) {
+      background-size: 600px 600px;
+      background-position: right;
+    }
+  }
+  &.second {
+    background-image: url('../img/hero/hero-2.png');
+    background-repeat: no-repeat;
+    background-position: 35% 0px;
+    background-size: 600px 600px;
+    @media screen and (min-width: 650px) {
+      background-position: right;
+    }
+  }
+  &.third {
+    background-image: url('../img/hero/hero-3.png');
+    background-repeat: no-repeat;
+    background-position: 30% 0px;
+    background-size: 765px 600px;
+    @media screen and (min-width: 650px) {
+      background-position: right;
+    }
+  }
+  &.fourth {
+    background-image: url('../img/hero/hero-4.png');
+    background-repeat: no-repeat;
+    background-position: 30% 32px;
+    background-size: 600px 600px;
+    @media screen and (min-width: 650px) {
+      background-position: right 32px;
+    }
+  }
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color),
+      0 0 30px var(--accent-color);
+  }
+  100% {
+    text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color),
+      0 0 40px var(--accent-color), 0 0 50px var(--accent-color),
+      0 0 70px var(--accent-color);
   }
 }

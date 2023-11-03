@@ -3,33 +3,60 @@
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide">
-      <img
-        src="@img/slide-1.jpg"
-        alt="first slide"
-        width="1280px"
-        height="718px"
-        loading="lazy"
-      />
+    <div class="swiper-slide first">
+      <div class="slide-label">
+        <p class="zone">Найкращий час для лазерної епіляції</p>
+        <p class="cost">ЗАРАЗ</p>
+      </div>
+      @@include('../components/button.html', { 
+      "type": "button", 
+      "attribute":"data-modal-open", 
+      "text": "Записатись на безкоштовну консультацію" 
+    })
     </div>
-    <div class="swiper-slide">
-      <img
-        src="@img/slide-1.jpg"
-        alt="first slide"
-        width="1280px"
-        height="718px"
-        loading="lazy"
-      />
+
+    <div class="swiper-slide second">
+      <div class="slide-label">
+        <p class="cost">Знижки</p>
+        <p class="zone">На перший <span>візит</span></p>
+      </div>
+      @@include('../components/button.html', { 
+      "type": "button", 
+      "attribute":"data-modal-open", 
+      "text": "Дізнатись ціну" 
+    })
     </div>
-    <div class="swiper-slide">
-      <img
-        src="@img/slide-1.jpg"
-        alt="first slide"
-        width="1280px"
-        height="718px"
-        loading="lazy"
-      />
+
+    <div class="swiper-slide third">
+      <div class="slide-label">
+        <p class="text">Акційна пропозиція</p>
+        <p class="zone">Бікіні + Пахви</p>
+        <p class="cost">800 грн</p>
+      </div>
+      @@include('../components/button.html', { 
+      "type": "button", 
+      "attribute":"data-modal-open", 
+      "text": "Записатись" 
+    })
     </div>
+
+    <div class="swiper-slide fourth">
+      <div class="slide-label">
+        <p class="text">Акційна пропозиція</p>
+        <p class="zone">
+          Ноги повністю <br />
+          + <br />
+          Бікіні повне
+        </p>
+        <p class="cost">1650 грн</p>
+      </div>
+      @@include('../components/button.html', { 
+      "type": "button", 
+      "attribute":"data-modal-open", 
+      "text": "Записатись" 
+    })
+    </div>
+    
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
