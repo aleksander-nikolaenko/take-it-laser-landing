@@ -3,12 +3,24 @@
     <h2 class="section-title">Про нашу студію</h2>
     <div class="about-wrapper">
       <picture>
-        <source srcset="@img/about/about-owner.webp" type="image/webp" />
-        <source srcset="@img/about/about-owner.jpg" type="image/jpg" />
+        <source
+          srcset="
+            @img/about/about-owner-1x.webp 1x,
+            @img/about/about-owner-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            @img/about/about-owner-1x.jpg 1x,
+            @img/about/about-owner-2x.jpg 2x
+          "
+          type="image/jpg"
+        />
 
         <img
           class="about-img"
-          src="@img/about/about-owner.jpg"
+          src="@img/about/about-owner-1x.jpg"
           alt="owner photo"
           width="400"
           height="540"

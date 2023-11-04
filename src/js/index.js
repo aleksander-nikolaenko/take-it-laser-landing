@@ -9,18 +9,6 @@ import { sliderHeroInit } from './sliderHero.js';
 import { sliderReviewsInit } from './sliderReviews.js';
 import { toggleAnswerQuestions } from './toggleAnswerQuestions.js';
 
-function debounce(func, delay) {
-  let timeoutId;
-  return function () {
-    const context = this;
-    const args = arguments;
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(function () {
-      func.apply(context, args);
-    }, delay);
-  };
-}
-
 window.addEventListener('load', () => {
   isWebp();
   sliderHeroInit();
@@ -38,5 +26,17 @@ window.addEventListener(
   'resize',
   debounce(() => {
     generatePriceDots();
-  }, 300),
+  }, 300)
 );
+
+function debounce(func, delay) {
+  let timeoutId;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function () {
+      func.apply(context, args);
+    }, delay);
+  };
+}

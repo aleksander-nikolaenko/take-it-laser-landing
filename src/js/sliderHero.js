@@ -1,10 +1,12 @@
-import Swiper from 'swiper/bundle';
-
 export const sliderHeroInit = () => {
-  const swiper = new Swiper('.slider-hero', {
+  const swiperHero = new Swiper('.slider-hero', {
     // Optional parameters
     loop: true,
-    slidesPerView: 'auto',
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+    slidesPerView: 1,
     centeredSlides: true,
     // If we need pagination
     pagination: {
@@ -15,7 +17,7 @@ export const sliderHeroInit = () => {
       },
     },
     autoplay: {
-      delay: 10000,
+      delay: 5000,
     },
   });
 };

@@ -1,7 +1,5 @@
-import Swiper from 'swiper/bundle';
-
 export const sliderReviewsInit = () => {
-  const swiper = new Swiper('.slider-reviews', {
+  const swiperRewiew = new Swiper('.slider-reviews', {
     // Optional parameters
     slidesPerView: 1,
     spaceBetween: 40,
