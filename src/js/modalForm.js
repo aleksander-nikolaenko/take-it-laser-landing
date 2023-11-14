@@ -84,7 +84,7 @@ export const modalForm = () => {
   };
 
   const backdropHandler = event => {
-    if (event.target === formBackdrop || event.code === 'Escape') {
+    if (event.target === formBackdrop) {
       formBackdrop.classList.add('is-hidden');
       document.querySelector('html').classList.remove('no-scroll');
     }

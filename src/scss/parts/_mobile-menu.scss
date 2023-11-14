@@ -41,6 +41,7 @@
     margin-bottom: 20px;
     color: var(--text-color);
     background: var(--secondary-text-color);
+    animation: pulse 1000ms infinite;
     &:hover {
       color: var(--accent-color);
     }
@@ -72,5 +73,15 @@
     &:hover {
       color: var(--text-color);
     }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
   }
 }

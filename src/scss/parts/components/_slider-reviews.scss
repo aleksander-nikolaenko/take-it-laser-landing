@@ -1,10 +1,19 @@
 .slider-reviews {
   position: relative;
-  min-width: 280px;
-  margin-bottom: 60px;
+  max-width: 280px;
+  padding-bottom: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  @include mq(tablet) {
+    max-width: 770px;
+  }
+  @include mq(desktop) {
+    max-width: 1040px;
+  }
 
   .swiper-slide {
-    max-width: 320px;
+    max-width: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +21,11 @@
     overflow: hidden;
     opacity: 0;
     @include mq(tablet) {
+      max-width: 230px;
       opacity: 1;
+    }
+    & img {
+      cursor: pointer;
     }
   }
 
@@ -22,7 +35,7 @@
 
   .swiper-pagination {
     z-index: 3;
-    bottom: -40px;
+    bottom: 20px;
   }
 
   .swiper-pagination-bullet {

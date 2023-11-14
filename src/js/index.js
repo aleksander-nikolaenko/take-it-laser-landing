@@ -3,6 +3,7 @@ import { isWebp } from './isWebp.js';
 import { mobileMenu } from './mobileMenu.js';
 import { modalConfirm } from './modalConfirm.js';
 import { modalForm } from './modalForm.js';
+import { modalImage } from './modalImage.js';
 import { navLinkActions } from './navLinkActions.js';
 import { selectCity } from './selectCity.js';
 import { sliderHeroInit } from './sliderHero.js';
@@ -18,6 +19,7 @@ window.addEventListener('load', () => {
   mobileMenu();
   modalForm();
   modalConfirm();
+  modalImage();
   selectCity();
   toggleAnswerQuestions();
 });

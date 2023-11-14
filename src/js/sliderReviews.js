@@ -13,17 +13,12 @@ export const sliderReviewsInit = () => {
     breakpoints: {
       768: {
         slidesPerView: 3,
-        centeredSlides: false,
       },
-      1024: {
+      1280: {
         slidesPerView: 4,
-        centeredSlides: false,
       },
     },
     loop: true,
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    // If we need pagination
     autoplay: {
       delay: 5000,
     },

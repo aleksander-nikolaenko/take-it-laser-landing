@@ -1,7 +1,6 @@
 export const sliderHeroInit = () => {
   const swiperHero = new Swiper('.slider-hero', {
     // Optional parameters
-    loop: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
@@ -16,8 +15,9 @@ export const sliderHeroInit = () => {
         return '<span class="' + className + '">' + '</span>';
       },
     },
-    autoplay: {
-      delay: 5000,
-    },
+    // loop: true,
+    // autoplay: {
+    //   delay: 5000,
+    // },
   });
 };

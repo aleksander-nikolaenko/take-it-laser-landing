@@ -80,86 +80,109 @@
         transform: translateX(-150%);
       }
     }
-    &.bikini-armpits {
-      .hero-img {
-        width: 740px;
-        height: 580px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        object-fit: none;
-        object-position: 30% 0px;
-      }
-    }
-    &.bikini-legs {
-      .hero-img {
-        width: 580px;
-        height: 580px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        object-fit: none;
-        object-position: 30% 0px;
-      }
-    }
-    &.discounts {
-      .hero-img {
-        width: 580px;
-        height: 580px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        object-fit: none;
-        object-position: 30% 0px;
-      }
-      .slide-label {
-        bottom: 200px;
-        @include mq(tablet) {
-          bottom: 240px;
-        }
-      }
-      .text {
-        margin-top: 20px;
-        text-align: center;
-      }
-      .zone span {
-        display: block;
-        @include mq(tablet) {
-          display: inline;
-        }
-      }
-    }
+    // &.bikini-armpits {
+    //   .hero-img {
+    //     width: 740px;
+    //     height: 580px;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     object-fit: none;
+    //     object-position: 30% 0px;
+    //   }
+    // }
+    // &.bikini-legs {
+    //   .hero-img {
+    //     width: 580px;
+    //     height: 580px;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     object-fit: none;
+    //     object-position: 30% 0px;
+    //   }
+    // }
+    // &.discounts {
+    //   .hero-img {
+    //     width: 580px;
+    //     height: 580px;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     object-fit: none;
+    //     object-position: 30% 0px;
+    //   }
+    //   .slide-label {
+    //     bottom: 200px;
+    //     @include mq(tablet) {
+    //       bottom: 240px;
+    //     }
+    //   }
+    //   .text {
+    //     margin-top: 20px;
+    //     text-align: center;
+    //   }
+    //   .zone span {
+    //     display: block;
+    //     @include mq(tablet) {
+    //       display: inline;
+    //     }
+    //   }
+    // }
     &.laser-time {
       .hero-img {
-        width: 580px;
+        width: 100%;
         height: 580px;
         position: absolute;
         top: 0;
         right: 0;
         object-fit: none;
-        object-position: 20% 180px;
+        object-position: 25% 100px;
+        @media screen and (min-width: 500px) {
+          object-position: 50% 100px;
+        }
         @include mq(tablet) {
-          object-position: 0 0;
+          width: 1280px;
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
+          object-position: 100% 0;
         }
       }
       .slide-label {
+        bottom: auto;
+        top: 20px;
         @include mq(tablet) {
-          bottom: 40px;
+          bottom: auto;
+        }
+        @media screen and (min-width: 900px) {
+          top: 80px;
+          bottom: auto;
+          left: 50%;
+          transform: translateX(-120%);
+        }
+      }
+      .zone {
+        @media screen and (min-width: 900px) {
+          margin-bottom: 60px;
         }
       }
       .button {
-        bottom: auto;
-        top: 40px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
+        animation: pulse-mobile 1000ms infinite;
         @include mq(tablet) {
-          top: 120px;
-          left: 10px;
-          transform: translateX(0);
-        }
-        @include mq(desktop) {
+          top: auto;
+          bottom: 40px;
           left: 50%;
-          transform: translateX(-150%);
+          transform: translateX(-50%);
+          animation: pulse-mobile 1000ms infinite;
+        }
+        @media screen and (min-width: 900px) {
+          left: 50%;
+          transform: translateX(-120%);
+          animation: pulse-desktop 1000ms infinite;
         }
       }
     }
@@ -184,5 +207,25 @@
   .swiper-pagination-bullet-active {
     width: 40px;
     background: var(--accent-color);
+  }
+}
+
+@keyframes pulse-mobile {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.03);
+  }
+}
+
+@keyframes pulse-desktop {
+  0%,
+  100% {
+    transform: translateX(-120%) scale(1);
+  }
+  50% {
+    transform: translateX(-120%) scale(1.03);
   }
 }

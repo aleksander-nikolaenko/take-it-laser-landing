@@ -12,7 +12,7 @@ export const modalConfirm = () => {
   };
 
   const backdropHandler = event => {
-    if (event.target === confirmBackdrop || event.code === 'Escape') {
+    if (event.target === confirmBackdrop) {
       confirmBackdrop.classList.add('is-hidden');
       document.querySelector('html').classList.remove('no-scroll');
     }
