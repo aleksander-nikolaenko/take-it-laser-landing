@@ -7,6 +7,7 @@ import { modalImage } from './modalImage.js';
 import { navLinkActions } from './navLinkActions.js';
 import { selectCity } from './selectCity.js';
 import { sliderHeroInit } from './sliderHero.js';
+import { sliderResultsInit } from './sliderResults.js';
 import { sliderReviewsInit } from './sliderReviews.js';
 import { toggleAnswerQuestions } from './toggleAnswerQuestions.js';
 
@@ -14,6 +15,7 @@ window.addEventListener('load', () => {
   isWebp();
   sliderHeroInit();
   sliderReviewsInit();
+  sliderResultsInit();
   navLinkActions();
   generatePriceDots();
   mobileMenu();

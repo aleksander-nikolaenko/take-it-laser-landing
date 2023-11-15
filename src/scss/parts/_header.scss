@@ -24,6 +24,7 @@
 
   & .button {
     display: none;
+    animation: pulse 1000ms infinite;
     &:hover {
       color: var(--text-color);
     }
@@ -40,22 +41,29 @@
   }
   & .nav-list {
     display: flex;
+    padding: 4px 0px;
   }
   & .nav-link {
     display: inline-block;
     text-align: center;
-    padding: 4px 8px;
-    margin-right: 20px;
-    border-radius: 16px;
+    margin-right: 24px;
+    border: none;
     color: var(--secondary-text-color);
     &.current {
-      color: var(--text-color);
-    }
-    &:not(:last-child) {
-      margin-right: 20px;
+      border-bottom: 2px solid var(--secondary-text-color);
     }
     &:hover {
-      color: var(--text-color);
+      border-bottom: 2px solid var(--secondary-text-color);
     }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
   }
 }
