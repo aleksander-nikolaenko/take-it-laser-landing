@@ -47,7 +47,7 @@
     display: inline-block;
     text-align: center;
     margin-right: 24px;
-    border: none;
+    border-bottom: 2px solid transparent;
     color: var(--secondary-text-color);
     &.current {
       border-bottom: 2px solid var(--secondary-text-color);
