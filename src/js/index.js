@@ -5,6 +5,7 @@ import { modalConfirm } from './modalConfirm.js';
 import { modalForm } from './modalForm.js';
 import { modalImage } from './modalImage.js';
 import { navLinkActions } from './navLinkActions.js';
+import { priceActions } from './priceActions.js';
 import { selectCity } from './selectCity.js';
 import { sliderHeroInit } from './sliderHero.js';
 import { sliderResultsInit } from './sliderResults.js';
@@ -17,7 +18,7 @@ window.addEventListener('load', () => {
   sliderReviewsInit();
   sliderResultsInit();
   navLinkActions();
-  generatePriceDots();
+  priceActions();
   mobileMenu();
   modalForm();
   modalConfirm();

@@ -25,9 +25,6 @@
   & .button {
     display: none;
     animation: pulse 1000ms infinite;
-    &:hover {
-      color: var(--text-color);
-    }
     @include mq(tablet) {
       display: flex;
     }

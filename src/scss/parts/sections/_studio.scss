@@ -69,9 +69,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
     animation: pulse 1000ms infinite;
-    @include mq(tablet) {
-      display: none;
-    }
   }
 }
 

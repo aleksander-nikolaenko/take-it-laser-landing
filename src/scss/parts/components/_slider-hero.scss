@@ -66,9 +66,6 @@
       width: 260px;
       left: 10px;
       bottom: 40px;
-      &:hover {
-        color: var(--text-color);
-      }
       @include mq(tablet) {
         width: 328px;
         margin: 0 auto;
@@ -80,55 +77,6 @@
         transform: translateX(-150%);
       }
     }
-    // &.bikini-armpits {
-    //   .hero-img {
-    //     width: 740px;
-    //     height: 580px;
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     object-fit: none;
-    //     object-position: 30% 0px;
-    //   }
-    // }
-    // &.bikini-legs {
-    //   .hero-img {
-    //     width: 580px;
-    //     height: 580px;
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     object-fit: none;
-    //     object-position: 30% 0px;
-    //   }
-    // }
-    // &.discounts {
-    //   .hero-img {
-    //     width: 580px;
-    //     height: 580px;
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     object-fit: none;
-    //     object-position: 30% 0px;
-    //   }
-    //   .slide-label {
-    //     bottom: 200px;
-    //     @include mq(tablet) {
-    //       bottom: 240px;
-    //     }
-    //   }
-    //   .text {
-    //     margin-top: 20px;
-    //     text-align: center;
-    //   }
-    //   .zone span {
-    //     display: block;
-    //     @include mq(tablet) {
-    //       display: inline;
-    //     }
-    //   }
-    // }
     &.laser-time {
       .hero-img {
         width: 100%;

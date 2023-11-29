@@ -12,6 +12,7 @@ src/html/parts/modal-form.html
 src/html/parts/sections/hero.html
 src/html/parts/components/select-city.html
 src/html/parts/components/price-list-complex.html
+src/html/parts/components/price-list-discount.html
 src/html/parts/components/price-list-single.html
 src/html/parts/components/questions-list.html
 src/html/parts/components/slider-hero.html

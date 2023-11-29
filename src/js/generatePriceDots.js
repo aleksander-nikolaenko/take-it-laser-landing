@@ -5,6 +5,12 @@ export const generatePriceDots = () => {
     const name = item.querySelector('.name');
     const price = item.querySelector('.actual-price');
     const dots = item.querySelector('.dots');
+    const isSeparator = name.textContent === '';
+    if (isSeparator) {
+      dots.classList.add('visually-hidden');
+      item.classList.add('separator');
+      return;
+    }
     dots.textContent = '.'.repeat(100);
     const availableSpace =
       item.offsetWidth - name.offsetWidth - price.offsetWidth - 8;

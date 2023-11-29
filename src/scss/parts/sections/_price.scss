@@ -2,29 +2,72 @@
   .section-title {
     margin-bottom: 20px;
   }
-  .post-title {
-    margin-bottom: 12px;
-  }
-  .list-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+  .price-text {
+    font-size: 12px;
+    text-align: center;
+    color: var(--text-color);
     margin-bottom: 20px;
     @include mq(tablet) {
-      flex-direction: row;
-      justify-content: space-between;
+      font-size: 16px;
     }
-    .complex-list {
-      width: 100%;
+  }
+  .price-text-date {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+  }
+  .list-container {
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 12px;
+    text-align: center;
+    color: var(--text-color);
+    @include mq(tablet) {
+      font-size: 16px;
+    }
+    .list-title {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--title-color);
+      text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color),
+        0 0 30px var(--accent-color);
       @include mq(tablet) {
-        width: 48%;
+        font-size: 24px;
       }
     }
-    .single-list {
-      width: 100%;
-      @include mq(tablet) {
-        width: 48%;
+    .button-link {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 16px;
+      text-decoration: underline;
+      color: var(--accent-color);
+      cursor: pointer;
+      transition: color 0.3s;
+      &:hover {
+        color: var(--error-color);
       }
+      @include mq(tablet) {
+        font-size: 18px;
+      }
+    }
+    .discount-list {
+      max-width: 960px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 40px;
+    }
+    .price-list {
+      max-width: 960px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 40px;
     }
   }
 }

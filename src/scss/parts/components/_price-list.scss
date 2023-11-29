@@ -3,15 +3,23 @@
     &:not(:last-child) {
       margin-bottom: 8px;
     }
+    &.separator {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--accent-color);
+    }
   }
   .text {
     font-size: 12px;
     line-height: 1.5;
+    text-transform: uppercase;
+    text-align: right;
+    letter-spacing: 1px;
     color: var(--text-color);
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @media screen and (min-width: 860px) {
+    @include mq(tablet) {
       font-size: 16px;
     }
     .name {
@@ -22,6 +30,8 @@
     }
     .actual-price {
       flex-shrink: 0;
+      font-weight: 700;
+      color: var(--title-color);
     }
   }
 }

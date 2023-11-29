@@ -1,0 +1,56 @@
+.price-list-discount {
+  .price-item-discount {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent-color);
+    }
+    .services {
+      display: flex;
+      flex-direction: column;
+      .service {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: left;
+        letter-spacing: 2px;
+        color: var(--title-color);
+        @include mq(tablet) {
+          font-size: 16px;
+        }
+      }
+    }
+    .price {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: baseline;
+      gap: 8%;
+      text-transform: uppercase;
+      text-align: right;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-color);
+      @include mq(tablet) {
+        font-size: 18px;
+      }
+      .actual-price::before {
+        content: '';
+        display: block;
+        width: 110%;
+        border-bottom: 2px solid var(--error-color);
+        transform: rotate(-12deg) translate(-8px, 10px);
+        @include mq(tablet) {
+          transform: rotate(-12deg) translate(-8px, 12px);
+        }
+      }
+      .discount-price {
+        font-size: 18px;
+        color: var(--title-color);
+        @include mq(tablet) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

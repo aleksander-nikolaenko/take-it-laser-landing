@@ -105,15 +105,16 @@ button {
 }
 
 .section {
-  padding-bottom: 20px;
+  padding-bottom: 80px;
 }
 .section-title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   text-align: center;
   color: var(--title-color);
+
   @include mq(tablet) {
-    font-size: 36px;
+    font-size: 48px;
   }
 }
 .post-title {
