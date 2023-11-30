@@ -3,8 +3,8 @@ import { generatePriceDots } from './generatePriceDots.js';
 export const priceActions = () => {
   const itemDiscount = document.querySelectorAll('.price-item-discount');
   const buttonDiscount = document.querySelector('.button-link-discount');
-  const buttonSingle = document.querySelector('.button-link-single');
-  const listSingle = document.querySelector('.single-list');
+  const buttonPrice = document.querySelector('.button-link-price');
+  const listPrice = document.querySelector('.price-list');
 
   itemDiscount.forEach(item => {
     const price = item.querySelector('.discount-price');
@@ -32,11 +32,11 @@ export const priceActions = () => {
   };
 
   const showPrice = () => {
-    buttonSingle.classList.add('visually-hidden');
-    listSingle.classList.remove('visually-hidden');
+    buttonPrice.classList.add('visually-hidden');
+    listPrice.classList.remove('visually-hidden');
     generatePriceDots();
   };
 
   buttonDiscount.addEventListener('click', showHideItems);
-  buttonSingle.addEventListener('click', showPrice);
+  buttonPrice.addEventListener('click', showPrice);
 };

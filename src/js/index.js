@@ -1,3 +1,6 @@
+import { contactsTabs } from './contactsTabs.js';
+import { createPhoneNumberMask } from './createMasks.js';
+import { feedbackForm } from './feedbackForm.js';
 import { generatePriceDots } from './generatePriceDots.js';
 import { isWebp } from './isWebp.js';
 import { mobileMenu } from './mobileMenu.js';
@@ -21,10 +24,13 @@ window.addEventListener('load', () => {
   priceActions();
   mobileMenu();
   modalForm();
+  feedbackForm();
   modalConfirm();
   modalImage();
   selectCity();
   toggleAnswerQuestions();
+  createPhoneNumberMask();
+  contactsTabs();
 });
 
 window.addEventListener(

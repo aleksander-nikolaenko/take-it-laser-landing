@@ -1,0 +1,97 @@
+<section id="contacts" class="section contacts">
+  <div class="container">
+    <h2 class="section-title">Зворотній зв'язок</h2>
+    <p class="contacts-form-text">
+      <span>Якщо в</span>
+      <a href="https://beauty.dikidi.net/#widget=138372">онлайн записі</a>
+      <span
+        >не змогли знайти підходящого часу для запису або виникли якісь
+        додаткові питання. Заповніть та відправте ваші данні, ми з вами
+        з'вяжемось найближчим часом.</span
+      >
+    </p>
+    <div class="contacts-wrapper">
+      <div class="contacts-form-wrapper">
+        @@include('../components/feedback-form.html', { "data-attribute":
+        "data-contacts-form", })
+      </div>
+      <div class="contacts-tabs-wrapper">
+        <ul class="contacts-buttons-list">
+          <li class="contacts-button-item">
+            <button class="current" data-contactsbutton="kh">Харків</button>
+          </li>
+          <li class="contacts-button-item">
+            <button data-contactsbutton="pl">Полтава</button>
+          </li>
+        </ul>
+        <ul class="contacts-tabs-list">
+          <li class="contacts-tab" data-contactstab="kh">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20514.34441199415!2d36.212493130970564!3d50.00586227323725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a14b541086c1%3A0x6a0e111faaf12dd6!2zVGFrZSBpdCBMYXNlciAtINCb0LDQt9C10YDQvdCwINC10L_RltC70Y_RhtGW0Y8g0KXQsNGA0LrRltCy!5e0!3m2!1sru!2sua!4v1701268550540!5m2!1sru!2sua"
+              width="300"
+              height="240"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <div class="contacts-info">
+              <address class="contacts-info-item city">
+                <svg class="contacts-icon">
+                  <use href="./img/icons-sprite.svg#contacts-location"></use>
+                </svg>
+                м.Харків, майдан Свободи 7
+              </address>
+              <div class="contacts-info-item worktime">
+                <svg class="contacts-icon">
+                  <use href="./img/icons-sprite.svg#contacts-shedule"></use>
+                </svg>
+                Пн-Вс з 9.00 до 21.00
+              </div>
+              <a class="contacts-info-item phone" href="tel:+380964559774">
+                <svg class="contacts-icon">
+                  <use href="./img/icons-sprite.svg#contacts-phone"></use>
+                </svg>
+                +38 096 455 97 74
+              </a>
+            </div>
+          </li>
+
+          <li class="contacts-tab visually-hidden" data-contactstab="pl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20691.874854854017!2d34.537670528223494!3d49.588614896921285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d825bb51ed16a1%3A0xfadcbccdd2a3fd5f!2zVGFrZSBpdCBMYXNlciAtINCb0LDQt9C10YDQvdCwINC10L_RltC70Y_RhtGW0Y8g0J_QvtC70YLQsNCy0LA!5e0!3m2!1sru!2sua!4v1701268393543!5m2!1sru!2sua"
+              width="300"
+              height="240"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <div class="contacts-info">
+              <address class="contacts-info-item city">
+                <svg class="contacts-icon">
+                  <use href="./img/icons-sprite.svg#contacts-location"></use>
+                </svg>
+                м.Полтава, вул.Котляревського 3
+              </address>
+              <div class="contacts-info-item worktime">
+                <svg class="contacts-icon">
+                  <use href="./img/icons-sprite.svg#contacts-shedule"></use>
+                </svg>
+                Пн-Вс з 8.00 до 20.00
+              </div>
+              <a class="contacts-info-item phone" href="tel:+380964559774">
+                <svg class="contacts-icon">
+                  <use href="./img/icons-sprite.svg#contacts-phone"></use>
+                </svg>
+                +38 096 455 97 74
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

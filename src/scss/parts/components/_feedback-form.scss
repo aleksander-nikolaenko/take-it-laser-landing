@@ -1,76 +1,4 @@
-.form-backdrop {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  overflow-y: auto;
-  background-color: rgba(160, 200, 20, 0.3);
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    & .modal-form-wrapper {
-      transform: scale(2) translateY(300px);
-    }
-  }
-}
-
-.modal-form-wrapper {
-  padding: 20px;
-  width: 80%;
-  max-width: 400px;
-  min-height: 320px;
-  background-color: var(--primary-background-color);
-  border-radius: 16px;
-  position: relative;
-  top: 0;
-  transform: scale(1) translateY(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    z-index: 10;
-    background: rgba(50, 50, 50, 0.7) url('../img/loader.gif') center / 50px
-      no-repeat;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  &.sending::after {
-    opacity: 1;
-    visibility: visible;
-  }
-  @media screen and (max-height: 600px) {
-    top: 50%;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 40px;
-    max-width: 600px;
-  }
-}
-
-.form-title {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  color: var(--text-color);
-  margin-top: 20px;
-  margin-bottom: 12px;
-}
-
-.modal-form {
+.feedback-form {
   & .form-field + .form-field {
     margin-top: 12px;
   }
@@ -78,9 +6,11 @@
     font-size: 12px;
     line-height: 1.15;
     color: var(--text-color);
-
     display: block;
     margin-bottom: 4px;
+    @include mq(tablet) {
+      font-size: 14px;
+    }
   }
 
   & .form-input-wrapper {
@@ -161,14 +91,12 @@
       font-size: 16px;
     }
   }
+
   .button {
     margin: 0 auto;
     margin-top: 12px;
     padding-left: 32px;
     padding-right: 32px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover {
-      color: var(--text-color);
-    }
+    border-radius: 0px;
   }
 }
