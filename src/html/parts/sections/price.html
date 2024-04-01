@@ -2,22 +2,30 @@
   <div class="container">
     <h2 class="section-title">Прайс</h2>
     <p class="price-text">
-      У нас для вас особлива пропозиція &mdash; придбайте наші послуги в
-      комплексі, та отримайте більше догляду за меншу ціну!
+      Вартість курсу лазерної епіляції для кожного клієнта буде залежати від
+      індивідуальних особливостей організму. Повний курс складає приблизно 10
+      сеансів, але може змінюватись від 6 до 12. На це впливає вік, стать,
+      густота та колір волосся, гормональний фон організму, зона яка
+      обробляється та багато інших факторів.
     </p>
     <div class="list-container">
       <div class="discount-list">
-        <h3 class="list-title">Знижки на комплекси</h3>
+        <h3 class="list-title">
+          Ціна одного сеансу наших популярних комплексів
+        </h3>
         @@include('../components/price-list-discount.html')
-        <button class="button-link button-link-discount" type="button">
-          Показати більше акційних пропозицій
+        <button
+          class="button-link button-link-discount visually-hidden"
+          type="button"
+        >
+          Показати більше популярних комплексів
         </button>
       </div>
       <button class="button-link button-link-price" type="button">
         Подивитись прайс повністю
       </button>
       <div class="price-list visually-hidden">
-        <h3 class="list-title">Ціна окремої зони</h3>
+        <h3 class="list-title">Ціна одного сеансу лазерної епіляції</h3>
         @@include('../components/price-list-single.html')
       </div>
     </div>

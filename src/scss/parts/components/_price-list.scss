@@ -10,7 +10,7 @@
     }
   }
   .text {
-    font-size: 12px;
+    font-size: calc((100vw - 320px) / (1280 - 320) * (16 - 12) + 12px);
     line-height: 1.5;
     text-transform: uppercase;
     text-align: right;
@@ -19,9 +19,6 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @include mq(tablet) {
-      font-size: 16px;
-    }
     .name {
       flex-shrink: 0;
     }

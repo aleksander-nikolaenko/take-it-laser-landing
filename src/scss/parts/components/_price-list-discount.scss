@@ -1,9 +1,7 @@
 .price-list-discount {
   .price-item-discount {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--accent-color);
-    }
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
     .services {
       display: flex;
       flex-direction: column;

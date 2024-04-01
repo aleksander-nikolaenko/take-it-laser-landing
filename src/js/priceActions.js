@@ -9,9 +9,9 @@ export const priceActions = () => {
   itemDiscount.forEach(item => {
     const price = item.querySelector('.discount-price');
     const isVisibleItems =
-      price.textContent.includes('1900') ||
-      price.textContent.includes('1400') ||
-      price.textContent.includes('800');
+      price.textContent.includes('2100') ||
+      price.textContent.includes('1800') ||
+      price.textContent.includes('950');
     if (!isVisibleItems) {
       item.classList.add('visually-hidden');
     }
@@ -22,9 +22,9 @@ export const priceActions = () => {
     itemDiscount.forEach(item => {
       const price = item.querySelector('.discount-price');
       const isVisibleItems =
-        price.textContent.includes('1900') ||
-        price.textContent.includes('1400') ||
-        price.textContent.includes('800');
+        price.textContent.includes('2100') ||
+        price.textContent.includes('1800') ||
+        price.textContent.includes('950');
       if (!isVisibleItems) {
         item.classList.remove('visually-hidden');
       }

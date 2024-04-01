@@ -5,7 +5,8 @@
 
   .price-text {
     font-size: 12px;
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
     color: var(--text-color);
     margin-bottom: 20px;
     @include mq(tablet) {
@@ -43,7 +44,6 @@
       }
     }
     .button-link {
-      margin-top: 20px;
       text-align: center;
       font-size: 16px;
       text-decoration: underline;
@@ -67,7 +67,6 @@
       max-width: 960px;
       margin-right: auto;
       margin-left: auto;
-      margin-bottom: 40px;
     }
   }
 }

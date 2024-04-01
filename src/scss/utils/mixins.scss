@@ -85,3 +85,19 @@
     };
   }
 */
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units: px) {
+  $k: calc(($f-max - $f-min) / ($v-max - $v-min));
+  $b: $f-min - $k * $v-min;
+
+  $b: $b + $units;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+
+/*  Usage
+.fluid-font-size {
+  font-size: calcFluidFontSize(16, 48, 480, 1280, px);
+  font-size: calcFluidFontSize(1, 3, 30, 80, rem);
+}
+*/
