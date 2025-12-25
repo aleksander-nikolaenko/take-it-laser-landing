@@ -14,6 +14,7 @@ import { sliderHeroInit } from './sliderHero.js';
 import { sliderResultsInit } from './sliderResults.js';
 import { sliderReviewsInit } from './sliderReviews.js';
 import { toggleAnswerQuestions } from './toggleAnswerQuestions.js';
+import { pasteCurrentYear } from './pasteCurrentYear.js';
 
 window.addEventListener('load', () => {
   isWebp();
@@ -31,6 +32,7 @@ window.addEventListener('load', () => {
   toggleAnswerQuestions();
   createPhoneNumberMask();
   contactsTabs();
+  pasteCurrentYear();
 });
 
 window.addEventListener(
